@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Feedback Form</h1>
+    <form id="feedbackForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="regNo">Registration No.:</label>
+        <input type="text" id="regNo" name="regNo" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+      </div>
+      <div class="form-group">
+        <label for="teacher">Teacher Name:</label>
+        <input type="text" id="teacher" name="teacher" required>
+      </div>
+      <div class="form-group">
+        <label for="slot">Slot:</label>
+        <input type="text" id="slot" name="slot" required>
+      </div>
+      <div class="form-group">
+        <label for="semester">Semester:</label>
+        <select id="semester" name="semester" required>
+          <option value="">Select Semester</option>
+          <option value="1">1st Semester</option>
+          <option value="2">2nd Semester</option>
+          <option value="3">3rd Semester</option>
+          <!-- Add more options here if needed -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" required></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Retrieve form values
+      var name = document.getElementById("name").value;
+      var regNo = document.getElementById("regNo").value;
+      var subject = document.getElementById("subject").value;
+      var teacher = document.getElementById("teacher").value;
+      var slot = document.getElementById("slot").value;
+      var semester = document.getElementById("semester").value;
+      var feedback = document.getElementById("feedback").value;
+
+      // Display submitted values
+      console.log("Name: " + name);
+      console.log("Registration No.: " + regNo);
+      console.log("Subject: " + subject);
+      console.log("Teacher Name: " + teacher);
+      console.log("Slot: " + slot);
+      console.log("Semester: " + semester);
+      console.log("Feedback: " + feedback);
+
+      // Reset form
+      document.getElementById("feedbackForm").reset();
+    });
+  </script>
+</body>
+</html>
